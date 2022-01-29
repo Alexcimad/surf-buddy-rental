@@ -5,17 +5,17 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    #CREATE -----------------------------
-    def new
-        @user = User.new
-    end
+    # #CREATE -----------------------------
+    # def new
+    #     @user = User.new
+    # end
 
-    def create
-        @user = User.new(user_params)
-        @user.save
+    # def create
+    #     @user = User.new(user_params)
+    #     @user.save
 
-        redirect_to user_path(@user)
-    end
+    #     redirect_to user_path(@user)
+    # end
 
     #UPDATE -----------------------------
     def edit
