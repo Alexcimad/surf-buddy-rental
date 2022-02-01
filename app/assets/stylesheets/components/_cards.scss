@@ -39,11 +39,18 @@
   }
 }
 
+// Card trip definitions //
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
 }
+
+a:hover{
+  color:$dark_secondary;
+}
+
 
 .card-trip > img {
   height: 200px;
@@ -55,12 +62,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $dark_secondary;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: $light_secondary
 }
 
 
@@ -77,4 +86,46 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+// End of card trip definition 
+
+// card-offer-detail definition
+.card-offer-detail {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-offer-detail > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-offer-detail .card-offer-detail-description{
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.card-offer-detail-description .card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-offer-detail h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-offer-detail p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
 }
