@@ -1,4 +1,7 @@
 class OffersController < ApplicationController
+
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
     #READ all -----------------------------
     def index
         @offers = Offer.all
@@ -16,6 +19,7 @@ class OffersController < ApplicationController
 
     def create
         @offer = Offer.new(offer_params)
+        @offer.user = current_user
         @offer.save
 
         redirect_to offer_path(@offer)
@@ -42,7 +46,7 @@ class OffersController < ApplicationController
     private #------------------------------------------------------
 
     def offer_params
-        params.require(:offer).permit(:title, :description, :price_per_date)
+        params.require(:offer).permit(:title, :description, :price_per_date, :start_available_date, :end_available_date, :photo)
     end
 
 end

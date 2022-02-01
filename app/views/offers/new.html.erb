@@ -1,0 +1,17 @@
+<div class="container">
+    <%= simple_form_for @offer do |f| %>
+    <h1>Que propose-tu ?</h1>
+
+    <p><%= f.label "titre :" %> <%= f.text_field :title %></p>
+    <%= f.label "description :" %>
+    <p><%= f.text_field :description %></p>
+    
+    <p><%= f.label "prix :" %> <%= f.number_field :price_per_date %></p>
+    <p><%= f.label "du :" %> <%= f.date_field :start_available_date %></p>
+    <p><%= f.label "au :" %> <%= f.date_field :end_available_date %></p>
+    <p><%= f.input :photo, as: :file %></p>
+    <p><%= f.submit %></p>
+    <% end %>
+
+    <p><%= link_to "Annuler - Retour au menu", root_path %></p>
+</div>
