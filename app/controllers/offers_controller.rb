@@ -22,7 +22,7 @@ class OffersController < ApplicationController
         @offer.user = current_user
         @offer.save
 
-        redirect_to root_path
+        redirect_to offer_path(@offer)
     end
 
     #UPDATE -----------------------------
