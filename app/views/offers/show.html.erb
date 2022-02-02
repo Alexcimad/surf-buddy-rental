@@ -5,9 +5,9 @@
           <div>
               <h2><%=@offer.title%></h2>
               <p><%=@offer.description%></p>
-              <p>Start date : <%=@offer.start_available_date%></p>
-              <p>End date : <%=@offer.end_available_date%></p>
-              <p>Localisation : Biarritz</p>
+              <p><%=icon('fas','calendar-alt')%>Start date : <%=@offer.start_available_date%></p>
+              <p><%=icon('fas','calendar-alt')%>End date : <%=@offer.end_available_date%></p>
+              <p> <%=icon('fas','map-marker-alt')%> Biarritz</p>
           </div>
           <h2 class="card-offer-pricing"><%=@offer.price_per_date%>€ / Jour</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
