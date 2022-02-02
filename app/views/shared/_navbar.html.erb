@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "Create offer", new_offer_path, class: "btn btn-primary", id:"btn-create-offer" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
