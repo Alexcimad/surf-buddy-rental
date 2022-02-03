@@ -1,20 +1,19 @@
 <h1>My past bookings</h1>
 
   <% @bookings.each do |booking| %>
-      <div class="card-trip">
-        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> %>
-        <%#= cl_image_tag(booking.offer.photo.key, height: 300, width: 400, crop: :fill) %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= booking.offer.title %></h2>
-              <p><%= booking.offer.description %></p>
-              <p><%=icon('fas','map-marker-alt')%> Biarritz</p>
-              <p><%= booking.start_rental_date%> Start date</p>
-              <p><%= booking.end_rental_date%> End date</p>
-            </div>
-              <h2 class="card-trip-pricing"><%= booking.total_price %></h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <div class="card-trip">
+      <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= booking.offer.title %></h2>
+            <p><%= booking.offer.description %></p>
+            <p><%=icon('fas','map-marker-alt')%> Biarritz</p>
+            <p><%= booking.start_rental_date%> Start date</p>
+            <p><%= booking.end_rental_date%> End date</p>
           </div>
-      </div>
-    <% end %>
+          <h2 class="card-trip-pricing"><%= booking.total_price %>€</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+    </div>
+  <% end %>
 </div>
