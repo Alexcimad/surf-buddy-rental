@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     total_price = offer.price_per_date*(booking.end_rental_date-booking.start_rental_date)
     booking.total_price = total_price
     if booking.save!
-      redirect_to offers_path
+      redirect_to my_bookings_path
     else
       render :new
     end
