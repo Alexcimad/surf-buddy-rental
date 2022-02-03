@@ -13,7 +13,6 @@
   <% @offers.each do |offer| %>
     <%= link_to offer_path(offer) do %>
       <div class="card-trip">
-        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> %>
         <% if offer.photos %>
           <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
         <% else %>
