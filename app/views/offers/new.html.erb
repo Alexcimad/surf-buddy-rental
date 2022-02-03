@@ -1,8 +1,6 @@
 <div class="container">
     <%= simple_form_for @offer do |f| %>
     <h1>Que propose-tu ?</h1>
-
-
     <p><%= f.label "titre :" %> <%= f.text_field :title %></p>
     <%# <textarea class="form-control" id="exampleTextareaBio" placeholder="Tell us your story" required></textarea> %>
     <p><%= f.input :description,:input_html => {:style => 'width: 25%', :rows => 3 } %></p>
@@ -16,3 +14,4 @@
 
     <%= link_to "Annuler", root_path, class: "btn btn-flat" %>
 </div>
+
