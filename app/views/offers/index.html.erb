@@ -15,7 +15,7 @@
       <div class="card-trip">
         <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> %>
         <% if offer.photo %>
-          <%= cl_image_tag(offer.photo.key, height: 300, width: 400, crop: :fill) %>
+          <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
           <% else %>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <% end %>
