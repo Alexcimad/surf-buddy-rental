@@ -1,0 +1,12 @@
+    <%= simple_form_for @offer do |f| %>
+    <%= f.input :title, label: :Title %>
+    <%= f.input :description,label: :Description, :input_html => {:style => 'width: 100%', :rows => 3 } %>
+    <%= f.input :price_per_date, label: "Price per day"%>
+    <%= f.input :start_available_date, label: :From%>
+    <%= f.input :end_available_date, label: :To %>
+    <%= f.input :location %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Confirm", class: "btn btn-flat"%>
+    <% end %>
+
+    <%= link_to "Cancel", root_path, class: "btn btn-flat mt-2" %>
