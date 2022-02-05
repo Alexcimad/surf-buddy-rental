@@ -5,6 +5,12 @@ class OffersController < ApplicationController
   # READ all
   def index
     @offers = Offer.all
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+    end
   end
 
   # READ one
