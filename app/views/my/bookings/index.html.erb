@@ -1,20 +1,20 @@
 <div class="container">
-<h1 class="mt-3 mb-3">My bookings</h1>
+  <h1 class="mt-3 mb-3">My bookings</h1>
 
-<% if @bookings.exists? %>
-  <% @bookings.each do |booking| %>
-    <div class="card-product mb-3">
-      <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
-      <div class="card-product-infos">
-        <h2><%= booking.offer.title %></h2>
-        <p><%= booking.offer.description %></p>
-        <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
-        <p>From : <%= booking.start_rental_date%> - To : <%= booking.end_rental_date%></p>
-        <p>Total price : <strong><%= booking.total_price %>€</strong></p>
+  <% if @bookings.exists? %>
+    <% @bookings.each do |booking| %>
+      <div class="card-product mb-3">
+        <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+        <div class="card-product-infos">
+          <h2><%= booking.offer.title %></h2>
+          <p>State :<strong><%= booking.offer.state %></strong></p>
+          <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
+          <p>Rented from : <%= booking.start_rental_date%> - To : <%= booking.end_rental_date%></p>
+          <p>Total price : <strong><%= booking.total_price %>€</strong></p>
+        </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+    <p>You don't have bookings yet</p>
   <% end %>
-<% else %>
-  <p>You don't have bookings yet</p>
-<% end %>
 </div>

@@ -1,41 +1,44 @@
-<h1 class="m-2">Rent your Surfoard</h1>
+<div class="container">
 
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group m-5">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-<% end %>
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<div class="cards m-5 pb-5">
-  <% @offers.each do |offer| %>
-    <%= link_to offer_path(offer) do %>
-      <div class="card-trip">
-        <% if offer.photos.attached? %>
-          <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
-        <% else %>
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <% end %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= offer.title %></h2>
-              <p><strong><%= offer.state %></strong></p>
-              <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
-            </div>
-              <h2 class="card-trip-pricing"><%= offer.price_per_date %>€ / Jour</h2>
-              <%if offer.user.photo.attached?%>
-                <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
-              <%else%>
-                <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "avatar" %>
-              <%end%>
-          </div>
-      </div>
-    <% end %>
+  <h1 class="mt-2">Rent your Surfoard</h1>
+
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group mt-2">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
   <% end %>
+  <div id="map"
+      style="width: 100%; height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="cards mt-3 pb-5">
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer) do %>
+        <div class="card-trip">
+          <% if offer.photos.attached? %>
+            <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+          <% else %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= offer.title %></h2>
+                <p><strong><%= offer.state %></strong></p>
+                <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
+              </div>
+                <h2 class="card-trip-pricing"><%= offer.price_per_date %>€ / Jour</h2>
+                <%if offer.user.photo.attached?%>
+                  <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
+                <%else%>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "avatar" %>
+                <%end%>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
