@@ -53,7 +53,10 @@
                 <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date %> To <%= @offer.end_available_date %></p>
                 <h2 id="card-offer-pricing"><%= @offer.price_per_date %>€ / day</h2>
               </div>
+              <% if @offer.user == current_user %>
+              <% else %>
               <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
+              <% end %>
           </div>
         </div>
     </div>
