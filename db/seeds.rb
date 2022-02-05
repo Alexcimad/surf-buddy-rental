@@ -22,3 +22,13 @@ puts"----CREATING OFFER"
   offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
   puts "- #{offer.title}"
 end
+
+offer = Offer.create(title: Faker::Music::RockBand.name, location: "Paris", description: Faker::Lorem.paragraph(sentence_count: 2) , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
+file = URI.open("https://cdn.pixabay.com/photo/2017/04/08/10/23/surfing-2212948_1280.jpg")
+offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer.title}"
+
+offer = Offer.create(title: Faker::Music::RockBand.name, location: "Lyon", description: Faker::Lorem.paragraph(sentence_count: 2) , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
+file = URI.open("https://cdn.pixabay.com/photo/2017/04/08/10/23/surfing-2212948_1280.jpg")
+offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer.title}"
