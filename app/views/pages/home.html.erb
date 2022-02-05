@@ -5,3 +5,53 @@
     <%= link_to "Découvrez nos planches 🏄‍♂️", offers_path, class:"btn btn-flat mt-3" %>
   </div>
 </div>
+
+<div class="container text-center">
+  <h2 class="mt-5">Our Statistics</h2>
+  <div class="row mt-5 mb-5">
+    <div class="col stats-number">
+      <h3><strong>100</strong></h3>
+      <p>Number of Board Rental</p>
+    </div>
+    <div class="col stats-number">
+      <h3><strong>1000</strong></h3>
+      <p>Different board to rate</p>
+    </div>
+    <div class="col stats-number">
+      <h3><strong>300</strong></h3>
+      <p>Surfer</p>
+    </div>
+  </div>
+</div>
+
+<div class="latest-offers">
+<h2 class="text-center">The lastest offers</h2>
+  <div class="cards m-5 pb-5">
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer) do %>
+        <div class="card-trip">
+          <% if offer.photos.attached? %>
+            <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+          <% else %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= offer.title %></h2>
+                <p><strong><%= offer.state %></strong></p>
+                <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
+              </div>
+                <h2 class="card-trip-pricing"><%= offer.price_per_date %>€ / Jour</h2>
+                <%if offer.user.photo.attached?%>
+                  <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
+                <%else%>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "avatar" %>
+                <%end%>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<iframe width="100%" height="1000px" src="https://www.youtube.com/embed/XG1o3i4oAl8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
