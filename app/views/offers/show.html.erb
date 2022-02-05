@@ -30,20 +30,22 @@
         <div class="card-offer-detail-description">
           <div class="lines">
               <div id="lines-header">
-                <h2><%=@offer.title%></h2>
-                <p> <%=icon('fas','map-marker-alt')%> <%=@offer.location%></p>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered" />
+                <div id="lines-header-title">
+                  <h2><%=@offer.title%></h2>
+                  <p> <%=icon('fas','map-marker-alt')%> <%=@offer.location%></p>
+                </div>
+                <div id="lines-header-photo">
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="lines-photo avatar-bordered" />
+                </div>
               </div>
               <div>
                 <p><%=@offer.description%></p>
               </div>
-              <div>
+              <div id="lines-footer">
                 <p> <%=icon('fas','calendar-alt')%> du <%=@offer.start_available_date%> au <%=@offer.end_available_date%></p>
-                <p><%=icon('fas','calendar-alt')%>Start date : <%=@offer.start_available_date%></p>
-                <p><%=icon('fas','calendar-alt')%>End date : <%=@offer.end_available_date%></p>
+                <h2 id="card-offer-pricing"><%=@offer.price_per_date%>€ / day</h2>
               </div>
           </div>
-          <h2 class="card-offer-pricing"><%=@offer.price_per_date%>€ / Jour</h2>
         </div>
     </div>
 
