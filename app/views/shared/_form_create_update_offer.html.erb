@@ -5,6 +5,7 @@
         <%= simple_form_for @offer do |f| %>
         <div class="m-2">
           <p><%= f.input :title, label: :Title %></p>
+          <%= f.input :state, label: "Board state"%>
           <p><%= f.input :description,label: :Description, :input_html => {:style => 'width: 100%', :rows => 3 } %></p>
           <p><%= f.input :price_per_date, label: "Price per day"%></p>
 
