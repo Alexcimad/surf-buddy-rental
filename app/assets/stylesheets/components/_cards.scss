@@ -140,12 +140,13 @@ a:hover{
 
 
 .card-offer-detail .card-offer-detail-carousel {
-  height: 60vh;
+  min-height: 500px;
   width: 40%;
 }
 
 .carousel-imagetag {
-  height: 100%;
+  min-height: 500px;
+  max-height: 500px;
   width: 100%;
   border-right: 1px, grey;
 }
@@ -221,4 +222,3 @@ a:hover{
 .card-product .card-product-infos {
   padding: 16px;
 }
-
