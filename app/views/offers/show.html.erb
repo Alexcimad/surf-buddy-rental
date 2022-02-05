@@ -46,6 +46,12 @@
                 <h2 id="card-offer-pricing"><%=@offer.price_per_date%>€ / day</h2>
               </div>
           </div>
+          <h2 class="card-offer-pricing"><%=@offer.price_per_date%>€ / Jour</h2>
+          <%if @offer.user.photo.attached?%>
+            <%= cl_image_tag(@offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-user avatar-bordered")%>
+          <%else%>
+            <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "card-user avatar-bordered" %>
+          <%end%>
         </div>
     </div>
 
