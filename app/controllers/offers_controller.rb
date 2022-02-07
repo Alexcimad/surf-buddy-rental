@@ -16,6 +16,10 @@ class OffersController < ApplicationController
   # READ one
   def show
     @offer = Offer.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # CREATE
