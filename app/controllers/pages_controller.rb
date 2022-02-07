@@ -3,5 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @offers = Offer.last(3)
+    @offerstorate = Offer.all.length
+    @booking = Booking.all.length
+    @users = User.all.length
   end
 end
