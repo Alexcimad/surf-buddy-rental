@@ -4,7 +4,11 @@ class OffersController < ApplicationController
 
   # READ all
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.near(params[:query], params[:km])
+    else
+      @offers = Offer.all
+    end
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
