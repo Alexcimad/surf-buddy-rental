@@ -4,6 +4,10 @@ class OffersController < ApplicationController
 
   # READ all
   def index
+    start_date = params[:start_date].present? ? params[:start_date] : nil
+    end_date = params[:end_date].present? ? params[:end_date] : nil
+    # @offers = Offer.all.where(:start_available_date >= start_date)
+  byebug
     if params[:query].present?
       if params[:km].present?
         @offers = Offer.near(params[:query],params[:km])
