@@ -5,7 +5,7 @@ class OffersController < ApplicationController
   # READ all
   def index
     if params[:query].present?
-      if params[:mk].present?
+      if params[:km].present?
         @offers = Offer.near(params[:query],params[:km])
       else 
         @offers = Offer.near(params[:query],100)
