@@ -1,8 +1,8 @@
- <div class="container"> 
+<div class="container">
   <%= simple_form_for [@offer,@booking] do |f| %>
       <h1> When do you want to book this board?</h1>
       <%= f.label "from :" %> <%= f.date_field :start_rental_date %>
       <%= f.label "to :" %> <%= f.date_field :end_rental_date %>
-      <%= f.submit "Confirm booking",class:"btn btn-custom-blue" %>
+      <%= f.submit "Confirm booking and surf!",class:"btn btn-custom-blue mt-3" %>
   <%end%>
 </div>
