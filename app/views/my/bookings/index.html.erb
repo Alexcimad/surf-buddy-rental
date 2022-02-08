@@ -12,6 +12,7 @@
           <p>Rented from : <%= booking.start_rental_date%> - To : <%= booking.end_rental_date%></p>
           <p>Total price : <strong><%= booking.total_price %>€</strong></p>
         </div>
+        <%= link_to "give a review", new_offer_review_path(booking.offer), class: "btn btn-primary btn-custom-blue mt-2"%>
       </div>
     <% end %>
   <% else %>
