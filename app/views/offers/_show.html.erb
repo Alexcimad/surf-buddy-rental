@@ -56,7 +56,7 @@
                 <p><%=@offer.description %></p>
               </div>
               <div id="lines-footer">
-                <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date %> To <%= @offer.end_available_date %></p>
+                <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
                 <h2 id="card-offer-pricing"><%= @offer.price_per_date %>€ / day</h2>
               </div>
               <% if @offer.user == current_user %>
@@ -70,11 +70,9 @@
   <%# -------LINKS------- %>
   </div>
   <div class="modal-footer">
-    <%= link_to "Back to offer list", offers_path, class: "btn btn-primary btn-custom-blue mt-2"%>
     <% if @offer.user == current_user %>
       <%= link_to "Edit this offer", edit_offer_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
-      <%= link_to "Delete this offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-custom-blue mt-2" %>
+      <%= link_to "Delete this offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-delete mt-2" %>
     <% end %>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   </div>
 </div>
