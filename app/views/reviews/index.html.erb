@@ -1,0 +1,10 @@
+<div class="container">
+  <h2> Reviews on <%= @offer.title %></h2>
+  <% @reviews.each do |review| %>
+    <span>from <%= review.user.email%> </span>
+    <p><%= review.comment%></p>
+    <p> Rating :<%review.rating.times do %>
+      <%= icon('fas','star')%><%end%> </p>
+    
+  <%end%>
+</div>
