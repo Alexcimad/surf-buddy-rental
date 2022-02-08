@@ -27,7 +27,7 @@
                 <p><strong><%= offer.state %></strong></p>
                 <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
               </div>
-                <h2 class="card-trip-pricing"><%= offer.price_per_date %>€ / Jour</h2>
+                <h2 class="card-trip-pricing"><%= offer.price_per_date %>€ / day</h2>
                 <%if offer.user.photo.attached?%>
                   <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
                 <%else%>
