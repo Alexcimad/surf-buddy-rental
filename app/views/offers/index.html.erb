@@ -1,7 +1,6 @@
 <div class="container">
 
   <h1 class="mt-2">Rent your Surfoard</h1>
- <%# ------- SEARCH BAR 1 ------- %>
 
   <%# ------- SEARCH BAR 2 ------- %>
   <%= form_tag offers_path, method: :get do %>
@@ -16,7 +15,16 @@
       class: "form-control",
       placeholder: "Km ?"
     %>
-    <%# <%= submit_tag "Search", class: "fas fa-search" %>
+    <%# ---------- SEARCH DATE --------- %>
+    <%= date_field_tag :start_date,
+      params[:start_date],
+      class: "form-control",
+    %>
+    <%= date_field_tag :end_date,
+      params[:end_date],
+      class: "form-control",
+    %>
+    <%# ---------- SUBMIT --------- %>
     <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-search"></i> Search
     </button>
