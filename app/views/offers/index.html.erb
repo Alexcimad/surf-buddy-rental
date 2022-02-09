@@ -1,31 +1,35 @@
 <div class="container">
-  <h1 class="m-5 text-center">Rent your Surfoard</h1>
+    <h1 class="m-5 text-center">Rent your Surfoard</h1>
 
-  <%# ------- SEARCH CITY ------- %>
-  <%= form_tag offers_path, method: :get do %>
-  <div class="search-bar search-form-control form-group mt-2 mb-5">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Where ?"
-    %>
-    <%= text_field_tag :km,
-      params[:km],
-      class: "form-control",
-      placeholder: "Km ?"
-    %>
-    <%# ---------- SEARCH DATE --------- %>
-    <%= date_field_tag :start_date,
-      params[:start_date],
-      class: "form-control"
-    %>
-    <%= date_field_tag :end_date,
-      params[:end_date],
-      class: "form-control"
-    %>
-    <%# ---------- SUBMIT --------- %>
-    <button name="button" type="submit" class="btn btn-flat">
-  <% end %>
+  <div class="search-bar-container">
+    <%# ------- SEARCH CITY ------- %>
+    <%= form_tag offers_path, method: :get do %>
+    <div class="search-bar search-form-control form-group mt-2 mb-5">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Where ?"
+      %>
+      <%= text_field_tag :km,
+        params[:km],
+        class: "form-control",
+        placeholder: "100 Km"
+      %>
+      <%# ---------- SEARCH DATE --------- %>
+      <%= date_field_tag :start_date,
+        params[:start_date],
+        class: "form-control"
+      %>
+      <%= date_field_tag :end_date,
+        params[:end_date],
+        class: "form-control"
+      %>
+      <%# ---------- SUBMIT --------- %>
+      <button name="button" type="submit" class="btn-custom-blue-searchbar"> <%# class="btn btn-flat" %>
+    <% end %>
+    
+
+  </div>
 </div>
 
 <div class="results">
