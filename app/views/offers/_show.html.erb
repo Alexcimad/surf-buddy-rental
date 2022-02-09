@@ -52,6 +52,7 @@
               <div>
                 <h4>State : <strong><%= @offer.state %></strong></h4>
                 <hr>
+                <p> <%=icon('fas','star')%> <%=@offer.ratings_average%> <%=icon('fas','comment')%> (<%=@offer.reviews.count%>)</p>
                 <h4>Description :</h4>
                 <p><%=@offer.description %></p>
               </div>
