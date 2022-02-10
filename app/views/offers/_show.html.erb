@@ -1,11 +1,6 @@
-<div class="container">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="card-offer-detail">
+<div class="">
+  <div class="modal-body custom-modal">
+    <div class="card-offer-detail card-ooffer-detail-custom">
 
     <%# -----CAROUSEL----- %>
       <div class="card-offer-detail-carousel">
@@ -36,6 +31,9 @@
   <%# --------DESCRIPTION------- %>
         <div class="card-offer-detail-description">
           <div class="lines">
+              <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
               <div id="lines-header">
                 <div id="lines-header-title">
                   <h1><%= @offer.title %></h1>
@@ -50,15 +48,15 @@
                 </div>
               </div>
               <div>
-                <h4>State : <strong><%= @offer.state %></strong></h4>
+                <p><%=icon('fa','gem')%> <%= @offer.state %></p>
                 <hr>
-                <p> <%=icon('fas','star')%> <%=@offer.ratings_average%></p>
-                <h4>Description :</h4>
-                <p><%=@offer.description %></p>
+                <p> <%=icon('fas','star')%> <%=@offer.ratings_average%> <%=icon('fas','comment')%> (<%=@offer.reviews.count%>)</p>
+                <br>
+                <p><%=icon('fa','quote-left')%> <%=@offer.description.first(150)... %> <%=icon('fa','quote-right')%></p>
               </div>
               <div id="lines-footer">
-                <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
-                <h2 id="card-offer-pricing"><%= @offer.price_per_date %>€ / day</h2>
+                <p> <%=icon('fa','calendar')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
+                <p id="card-offer-pricing"><%= @offer.price_per_date %> € / day</p>
               </div>
               <%= link_to "Board reviews", offer_reviews_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
               <% if @offer.user == current_user %>
