@@ -6,5 +6,6 @@ class PagesController < ApplicationController
     @offerstorate = Offer.all.length
     @booking = Booking.all.length
     @users = User.all.length
+    render layout: "home"
   end
 end
