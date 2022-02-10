@@ -1,8 +1,7 @@
 import flatpickr from "flatpickr";
 
 const initCalendar = () => {
-    console.log("ok")
-    flatpickr('#calendar-range', {
+    flatpickr('.calendar-range', {
         "mode": "range"
     });
 }

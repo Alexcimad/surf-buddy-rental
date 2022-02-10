@@ -4,12 +4,6 @@ class OffersController < ApplicationController
 
   # READ all
   def index
-    start_date = params[:start_date].present? ? params[:start_date] : nil
-    start_date = Date.parse(start_date) if start_date
-    end_date = params[:end_date].present? ? params[:end_date] : nil
-    end_date = Date.parse(end_date) if end_date
-    @offers = Offer.all.where("start_available_date >= ? AND end_available_date <= ?", start_date, end_date)
-  
     if params[:query].present?
       if params[:km].present?
         @offers = Offer.near(params[:query],params[:km])
@@ -19,12 +13,22 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all
     end
+
+    if params[:dates].present?
+      result_date = params[:dates]
+      start_date_string = result_date[-10..]
+      start_date = Date.parse(start_date_string) 
+      end_date_string = result_date[..10]
+      end_date = Date.parse(end_date_string) 
+      @offers = @offers.where("start_available_date <= ? AND end_available_date >= ?", start_date, end_date)
+    end
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude
       }
     end
+  
   end
 
   # READ one

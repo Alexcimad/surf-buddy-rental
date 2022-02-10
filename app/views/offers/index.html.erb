@@ -16,18 +16,12 @@
         placeholder: "100 Km"
       %>
       <%# ---------- SEARCH DATE --------- %>
-      <%= date_field_tag :start_date,
-        params[:start_date],
-        class: "form-control"
-        # placeholder: "01/01/2022"
-      %>
-      <%= date_field_tag :end_date,
-        params[:end_date],
-        class: "form-control"
-      %>
 
-      <input type="text" id="calendar-range" placeholder="Please select Date Range" data-input>
 
+      <%= text_field_tag :dates,
+        params[:dates], 
+        class: "calendar-range form-control"
+      %>
 
       <%# ---------- SUBMIT --------- %>
       <button name="button" type="submit" class="btn-custom-blue-searchbar"> <%# class="btn btn-flat" %>
