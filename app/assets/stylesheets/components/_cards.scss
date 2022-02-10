@@ -222,3 +222,21 @@ a:hover{
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+/***** Card review definition ************/
+.card-review{
+  border: 1px solid $dark_secondary;
+  border-radius: 5px;
+  background-color: white;
+  width: 500px;
+  margin-top: 5px;
+  color: $dark_primary;
+  padding: 5px 10px;
+}
+
+.card-review .review-user{
+}
+
+.card-review .review-comment{
+  font-style: italic;
+}
