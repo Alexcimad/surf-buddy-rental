@@ -28,6 +28,7 @@ window.$ = window.jquery = jquery;
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initCalendar } from '../plugins/init_calendar';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,4 +37,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  initCalendar();
 });
+
+
+
