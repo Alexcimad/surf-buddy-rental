@@ -58,7 +58,6 @@
                 <p> <%=icon('fa','calendar')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
                 <p id="card-offer-pricing"><%= @offer.price_per_date %> € / day</p>
               </div>
-              <%= link_to "Board reviews", offer_reviews_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
               <% if @offer.user == current_user %>
               <% else %>
               <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
@@ -69,10 +68,10 @@
 
   <%# -------LINKS------- %>
   </div>
-  <div class="modal-footer">
-    <% if @offer.user == current_user %>
-      <%= link_to "Edit this offer", edit_offer_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
-      <%= link_to "Delete this offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-delete mt-2" %>
-    <% end %>
-  </div>
+  <% if @offer.user == current_user %>
+    <div class="modal-footer">
+        <%= link_to "Edit this offer", edit_offer_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
+        <%= link_to "Delete this offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-delete mt-2" %>
+    </div>
+  <% end %>
 </div>
