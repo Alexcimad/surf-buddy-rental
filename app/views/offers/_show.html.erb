@@ -52,7 +52,7 @@
               <div>
                 <h4>State : <strong><%= @offer.state %></strong></h4>
                 <hr>
-                <p> <%=icon('fas','star')%> <%=@offer.ratings_average%> <%=icon('fas','comment')%> (<%=@offer.reviews.count%>)</p>
+                <p> <%=icon('fas','star')%> <%=@offer.ratings_average%></p>
                 <h4>Description :</h4>
                 <p><%=@offer.description %></p>
               </div>
@@ -60,6 +60,7 @@
                 <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
                 <h2 id="card-offer-pricing"><%= @offer.price_per_date %>€ / day</h2>
               </div>
+              <%= link_to "Board reviews", offer_reviews_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
               <% if @offer.user == current_user %>
               <% else %>
               <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
