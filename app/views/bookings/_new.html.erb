@@ -1,5 +1,8 @@
     <div class="modal-body custom-modal">
-       <div class="cards-review">
+      <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="cards-review">
         <% @offer.reviews.each do |review| %>
           <div class="card-review">
             <div class="card-review-header">
