@@ -58,7 +58,7 @@
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= offer.title %></h2>
-                    <p><strong><%= offer.state %></strong></p>
+                    <%= render 'shared/state', offer: offer %>
                     <p><%=icon('fas','star')%> <%=offer.ratings_average%> <%=icon('fas','comment')%> (<%=offer.reviews.count%>)</p>
                     <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
                   </div>

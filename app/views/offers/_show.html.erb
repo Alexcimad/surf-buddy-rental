@@ -48,7 +48,7 @@
                 </div>
               </div>
               <div>
-                <p><%=icon('fa','gem')%> <%= @offer.state %></p>
+                <%= render 'shared/state', offer: @offer %>
                 <hr>
                 <p> <%=icon('fas','star')%> <%=@offer.ratings_average%> <%=icon('fas','comment')%> (<%=@offer.reviews.count%>)</p>
                 <br>
