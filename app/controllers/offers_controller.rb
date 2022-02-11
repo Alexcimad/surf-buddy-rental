@@ -13,6 +13,15 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all
     end
+
+    if params[:dates].present?
+      result_date = params[:dates]
+      start_date_string = result_date[-10..]
+      start_date = Date.parse(start_date_string) 
+      end_date_string = result_date[..10]
+      end_date = Date.parse(end_date_string) 
+      @offers = @offers.where("start_available_date <= ? AND end_available_date >= ?", start_date, end_date)
+    end
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
@@ -22,6 +31,7 @@ class OffersController < ApplicationController
 
       }
     end
+  
   end
 
   # READ one
