@@ -4,34 +4,34 @@
   <div class="search-bar-container">
     <%# ------- SEARCH CITY ------- %>
     <%= form_tag offers_path, method: :get do %>
-    <div class="search-bar search-form-control form-group mt-2 mb-5">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Where ?"
-      %>
-      <%= text_field_tag :km,
-        params[:km],
-        class: "form-control",
-        placeholder: "100 Km"
-      %>
-      <%# ---------- SEARCH DATE --------- %>
+      <div class="search-bar search-form-control form-group mt-2 mb-5">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Where ?"
+        %>
+        <%= text_field_tag :km,
+          params[:km],
+          class: "form-control",
+          placeholder: "100 Km"
+        %>
+        <%# ---------- SEARCH DATE --------- %>
 
 
-      <%= text_field_tag :dates,
-        params[:dates], 
-        class: "calendar-range form-control",
-        placeholder: "Select your dates"
-      %>
+        <%= text_field_tag :dates,
+          params[:dates], 
+          class: "calendar-range form-control",
+          placeholder: "Select your dates"
+        %>
 
-      <%# ---------- SUBMIT --------- %>
-      <button name="button" type="submit" class="btn-custom-blue-searchbar"> 
-        <i class="fas fa-search"></i>
-      </button>
-      <%# class="btn btn-flat" %>
-    <% end %>
+        <%# ---------- SUBMIT --------- %>
+        <button name="button" type="submit" class="btn-custom-blue-searchbar"> 
+          <i class="fas fa-search"></i>
+        </button>
+        <%# class="btn btn-flat" %>
+        <% end %>
     
-
+      </div>
   </div>
 </div>
 
