@@ -1,13 +1,14 @@
+// Dark Mode
+
 .footer {
   width: 100%;
-  background: $dark_primary;
   display: flex;
   align-items: center;
+  background-color: $medium-primary;
   justify-content: space-between;
   height: 60px;
   padding: 0px 50px;
   border-radius: 0;
-  // color: rgba(0,0,0,0.3);
 }
 .footer-links {
   display: flex;
@@ -25,4 +26,15 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+// Light Mode
+.footer_transparency{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 50px;
+  border-radius: 0;
 }

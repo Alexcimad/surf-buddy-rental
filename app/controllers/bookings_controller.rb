@@ -1,7 +1,13 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
+
   def new
     @offer = Offer.find(params[:offer_id])
-    @booking = Booking.new
+    @booking = Booking.new 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -16,6 +22,11 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show_reviews
+    @offer = Offer.find(params[:offer_id])
+
   end
 
   private

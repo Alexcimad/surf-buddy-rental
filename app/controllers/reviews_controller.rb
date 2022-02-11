@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @offer = Offer.find(params[:offer_id])
     @reviews = @offer.reviews
@@ -22,6 +24,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:comment,:rating)
+    params.require(:review).permit(:comment,:rating,:title)
   end
 end

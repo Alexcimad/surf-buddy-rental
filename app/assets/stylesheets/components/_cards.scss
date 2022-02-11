@@ -222,3 +222,44 @@ a:hover{
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+
+.card-ooffer-detail-custom{
+  border-radius: 20px 20px 0px 0px;
+}
+
+/***** Card review definition ************/
+
+.cards-review{
+  width: 200px;
+  margin: 5px 10px;
+}
+.card-review{
+  border-bottom: 1px solid $dark_secondary;
+  background-color: white;
+  width: 500px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: $dark_primary;
+  padding: 5px 10px;
+}
+
+.card-review .card-review-header{
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.card-review .card-review-header img{
+  width : 75px;
+  height: 75px;
+}
+
+.card-review .card-review-content{
+
+}
+  
+
+.card-review .review-comment{
+  font-style: italic;
+}
