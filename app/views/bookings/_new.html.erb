@@ -1,0 +1,20 @@
+    <div class="modal-body custom-modal">
+       <div class="cards-review">
+        <% @offer.reviews.each do |review| %>
+          <div class="card-review">
+            <div class="card-review-header">
+              <%= cl_image_tag(review.user.photo.key, crop: :fill, :gravity => :face, class: "avatar-bordered")%>
+              <div>
+                <h1><%=review.user.pseudo%></h1>
+                <p><%= review.updated_at.strftime("%d %b %Y") %></p>
+              </div>
+            </div>
+            <div class="card-review-content">
+              <p class="review-comment"><%=icon('fa','quote-left')%> <%= review.comment%> <%=icon('fa','quote-right')%></p>
+              <p class="review-comment"> <%review.rating.times do %>
+                <%= icon('fas','star')%><%end%> </p>
+            </div>
+            </div>
+        <%end%>
+      </div>
+    </div>

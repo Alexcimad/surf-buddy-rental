@@ -58,10 +58,7 @@
                 <p> <%=icon('fa','calendar')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
                 <p id="card-offer-pricing"><%= @offer.price_per_date %> € / day</p>
               </div>
-              <% if @offer.user == current_user %>
-              <% else %>
-              <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
-              <% end %>
+                <%= link_to "Check board details", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
           </div>
         </div>
       </div>

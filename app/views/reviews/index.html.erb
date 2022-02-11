@@ -2,10 +2,18 @@
     <h2> Reviews on <%= @offer.title %></h2>
     <% @reviews.each do |review| %>
       <div class="card-review">
-        <p class="review-user">From <%= review.user.email%> </p>
-        <p class="review-comment"><%=icon('fa','quote-left')%> <%= review.comment%> <%=icon('fa','quote-right')%></p>
-        <p class="review-comment"> <%review.rating.times do %>
-          <%= icon('fas','star')%><%end%> </p>
+        <div class="card-review-header">
+          <%= cl_image_tag(review.user.photo.key, crop: :fill, :gravity => :face, class: "avatar-bordered")%>
+          <div>
+            <h1><%=review.user.pseudo%></h1>
+            <p><%= review.updated_at.strftime("%d %b %Y") %></p>
+          </div>
+        </div>
+        <div class="card-review-content">
+          <p class="review-comment"><%=icon('fa','quote-left')%> <%= review.comment%> <%=icon('fa','quote-right')%></p>
+          <p class="review-comment"> <%review.rating.times do %>
+            <%= icon('fas','star')%><%end%> </p>
+        </div>
         </div>
     <%end%>
 </div>
