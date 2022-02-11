@@ -26,9 +26,9 @@ file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644443
 user.photo.attach(io: file_user, filename: "alexis_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING THEO USER"
-user1 = User.create!(email: 'theogalais@gmail.com',password: "theogalais@gmail.com", password_confirmation: "theogalais@gmail.com", pseudo: "Thep")
-file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644061879/development/xazul3yjj1cwye2c0hlamrngfjc1.jpg")
-user1.photo.attach(io: file_user, filename: "theo_photo.jpg", content_type: "image/jpg")
+user1 = User.create!(email: 'theogalais@gmail.com',password: "theogalais@gmail.com", password_confirmation: "theogalais@gmail.com", pseudo: "Theo")
+file_user2 = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644061879/development/xazul3yjj1cwye2c0hlamrngfjc1.jpg")
+user1.photo.attach(io: file_user2, filename: "theo_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING DAVID USER"
 user2 = User.create!(email: 'davidsantos@live.fr',password: "davidsantos@live.fr", password_confirmation: "davidsantos@live.fr", pseudo: "David")
@@ -36,18 +36,18 @@ user2 = User.create!(email: 'davidsantos@live.fr',password: "davidsantos@live.fr
 
 puts "----CREATING ARON USER"
 user3 = User.create!(email: 'aron@gmail.com',password: "aron@gmail.com", password_confirmation: "aron@gmail.com", pseudo: "Aron")
-file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644537695/mrsoostbbotjg0bszbnm.png")
-user3.photo.attach(io: file_user, filename: "aron_photo.jpg", content_type: "image/jpg")
+file_user3 = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644537695/mrsoostbbotjg0bszbnm.png")
+user3.photo.attach(io: file_user3, filename: "aron_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING KELLY S. USER"
 kellyS = User.create!(email: 'kellyS@gmail.com',password: "WSL2021", password_confirmation: "WSL2021", pseudo: "Kelly")
-file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534494/pzrxzpomr8mup05gnztk.jpg")
-kellyS.photo.attach(io: file_user, filename: "flores_photo.jpg", content_type: "image/jpg")
+file_user4 = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534494/pzrxzpomr8mup05gnztk.jpg")
+kellyS.photo.attach(io: file_user4, filename: "flores_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING JEREMY F. USER"
 jeremyF = User.create!(email: 'jeremyF@gmail.com',password: "WSL2021", password_confirmation: "WSL2021", pseudo:"Jeremy")
-file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534528/ke6ltckdh4ii7rcdvkhf.jpg")
-jeremyF.photo.attach(io: file_user, filename: "flores_photo.jpg", content_type: "image/jpg")
+file_user5 = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534528/ke6ltckdh4ii7rcdvkhf.jpg")
+jeremyF.photo.attach(io: file_user5, filename: "flores_photo.jpg", content_type: "image/jpg")
 puts"----CREATING ALEXIS OFFER"
 
 # user for Alexis
@@ -58,51 +58,51 @@ puts "- #{offer.title}"
 
 offers << offer
 
-offer = Offer.create(title: " Oxbow 7'3", location: "Lacanau", description: description , state: "Perfect state", price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
-file = URI.open("https://cdn.pixabay.com/photo/2015/11/19/14/02/tables-1051165_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer2 = Offer.create(title: " Oxbow 7'3", location: "Lacanau", description: description , state: "Perfect state", price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
+file2 = URI.open("https://cdn.pixabay.com/photo/2015/11/19/14/02/tables-1051165_960_720.jpg")
+offer2.photos.attach(io: file2, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer2.title}"
 
-offers << offer
+offers << offer2
 
-offer = Offer.create(title: " FISH dura-tac 7'0", location: "Hossegor", state: "Used in WSL once", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
-file = URI.open("https://cdn.pixabay.com/photo/2018/12/16/20/09/surfer-3879268_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer3 = Offer.create(title: " FISH dura-tac 7'0", location: "Hossegor", state: "Used in WSL once", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
+file3 = URI.open("https://cdn.pixabay.com/photo/2018/12/16/20/09/surfer-3879268_960_720.jpg")
+offer3.photos.attach(io: file3, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer3.title}"
 
-offers << offer
+offers << offer3
 
-offer = Offer.create(title: " Malibu 7'6", location: "La Torche",state: "Good as new", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
-file = URI.open("https://cdn.pixabay.com/photo/2017/08/07/02/52/people-2599016_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer4 = Offer.create(title: " Malibu 7'6", location: "La Torche",state: "Good as new", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user.id )
+file4 = URI.open("https://cdn.pixabay.com/photo/2017/08/07/02/52/people-2599016_960_720.jpg")
+offer4.photos.attach(io: file4, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer4.title}"
 
-offers << offer
+offers << offer4
 
 puts"----CREATING THEO OFFER"
 
 # user for David
-offer = Offer.create(title: " YUYO 7'6", location: "San Sebastian", state: "Very good state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
-file = URI.open("https://cdn.pixabay.com/photo/2020/07/05/04/54/surfer-5371642_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer5 = Offer.create(title: " YUYO 7'6", location: "San Sebastian", state: "Very good state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
+file5 = URI.open("https://cdn.pixabay.com/photo/2020/07/05/04/54/surfer-5371642_960_720.jpg")
+offer5.photos.attach(io: file5, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer5.title}"
 
-offers << offer
+offers << offer5
 
 
-offer = Offer.create(title: " OLAIAN 7'9", location: "Zarautz", state: "Average state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
-file = URI.open("https://cdn.pixabay.com/photo/2017/08/01/14/52/people-2566019_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer6 = Offer.create(title: " OLAIAN 7'9", location: "Zarautz", state: "Average state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
+file6 = URI.open("https://cdn.pixabay.com/photo/2017/08/01/14/52/people-2566019_960_720.jpg")
+offer6.photos.attach(io: file6, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer6.title}"
 
-offers << offer
+offers << offer6
 
-offer = Offer.create(title: " Quicksilver 7'9", location: "Vannes", state: "Good state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
-file = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
-offer.photos.attach(io: file, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer.title}"
+offer7 = Offer.create(title: " Quicksilver 7'9", location: "Vannes", state: "Good state", description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
+file7 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
+offer7.photos.attach(io: file7, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer7.title}"
 
-offers << offer
+offers << offer7
 
 offers.each do |offer|
   reviews = []
