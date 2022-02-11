@@ -1,0 +1,14 @@
+
+<p>
+  <% case offer.state %>
+  <% when "Perfect state" %>
+    <%= icon('fa','grin-hearts') %>
+  <% when "Good state" %>
+      <%= icon('fa','smile') %>
+  <% when "Average state" %>
+      <%= icon('fa','meh-blank') %>
+  <% when "Bad state but functional" %>
+      <%= icon('fa','surprise') %>
+  <%end%> <%= offer.state%></p>
+
+

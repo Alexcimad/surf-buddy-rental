@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div>
-                <p><%=icon('fa','gem')%> <%= @offer.state %></p>
+                <%= render 'shared/state', offer: @offer %>
                 <p><%=icon('fas','star')%> <%=@offer.ratings_average%> <%=icon('fas','comment')%> (<%=@offer.reviews.count%>), <%=link_to "Review details",new_offer_booking_path(@offer),remote: :true, 'data-toggle': 'modal', 'data-target': '#modal-window-reviews'%></p>
                 <h4>Description :</h4>
                 <p><%=@offer.description %></p>
