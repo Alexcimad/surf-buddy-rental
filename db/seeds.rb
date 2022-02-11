@@ -21,27 +21,33 @@ Maniables et stable à la rame car le maitre beau est assez haut
 Visibles sur SJDL BIDART. L'état justifie le prix. N hésitez pas à appeler pour plus d infos."
 
 puts "----CREATING ALEXIS USER"
-user = User.create!(email: 'alex.cimadev@gmail.com', password: "Wagon2021", password_confirmation: "Wagon2021")
+user = User.create!(email: 'alex.cimadev@gmail.com', password: "Wagon2021", password_confirmation: "Wagon2021", pseudo: "Alexis")
 file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644443820/mabmadzzb9wnhg76yt1d.jpg")
 user.photo.attach(io: file_user, filename: "alexis_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING THEO USER"
-user1 = User.create!(email: 'theogalais@gmail.com',password: "theogalais@gmail.com", password_confirmation: "theogalais@gmail.com")
+user1 = User.create!(email: 'theogalais@gmail.com',password: "theogalais@gmail.com", password_confirmation: "theogalais@gmail.com", pseudo: "Thep")
 file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644061879/development/xazul3yjj1cwye2c0hlamrngfjc1.jpg")
 user1.photo.attach(io: file_user, filename: "theo_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING DAVID USER"
-user2 = User.create!(email: 'davidsantos@live.fr',password: "davidsantos@live.fr", password_confirmation: "davidsantos@live.fr")
+user2 = User.create!(email: 'davidsantos@live.fr',password: "davidsantos@live.fr", password_confirmation: "davidsantos@live.fr", pseudo: "David")
+
 
 puts "----CREATING ARON USER"
-user3 = User.create!(email: 'aron@gmail.com',password: "aron@gmail.com", password_confirmation: "aron@gmail.com")
+user3 = User.create!(email: 'aron@gmail.com',password: "aron@gmail.com", password_confirmation: "aron@gmail.com", pseudo: "Aron")
+file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644537695/mrsoostbbotjg0bszbnm.png")
+user3.photo.attach(io: file_user, filename: "aron_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING KELLY S. USER"
-kellyS = User.create!(email: 'kellyS@gmail.com',password: "WSL2021", password_confirmation: "WSL2021")
+kellyS = User.create!(email: 'kellyS@gmail.com',password: "WSL2021", password_confirmation: "WSL2021", pseudo: "Kelly")
+file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534494/pzrxzpomr8mup05gnztk.jpg")
+kellyS.photo.attach(io: file_user, filename: "flores_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING JEREMY F. USER"
-jeremyF = User.create!(email: 'jeremyF@gmail.com',password: "WSL2021", password_confirmation: "WSL2021")
-
+jeremyF = User.create!(email: 'jeremyF@gmail.com',password: "WSL2021", password_confirmation: "WSL2021", pseudo:"Jeremy")
+file_user = URI.open("https://res.cloudinary.com/dmnzqtckp/image/upload/v1644534528/ke6ltckdh4ii7rcdvkhf.jpg")
+jeremyF.photo.attach(io: file_user, filename: "flores_photo.jpg", content_type: "image/jpg")
 puts"----CREATING ALEXIS OFFER"
 
 # user for Alexis
@@ -100,9 +106,9 @@ offers << offer
 
 offers.each do |offer|
   reviews = []
-  reviewKS = Review.create!(comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
-  reviewJF = Review.create!(comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
-  reviewDavid = Review.create!(comment: "For funny spots in Carnac, it is really usefull", rating: (1..5).to_a.sample, user_id:user3.id, offer_id: offer.id )
-  reviews = [reviewKS, reviewJF, reviewDavid]
+  reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
+  reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:jeremyF.id, offer_id: offer.id )
+  reviewAron = Review.create!(title: "Good board to play in Britanny!", comment: "For funny spots in Carnac, it is really usefull", rating: (1..5).to_a.sample, user_id:user3.id, offer_id: offer.id )
+  reviews = [reviewKS, reviewJF, reviewAron]
   offer.reviews = reviews
 end

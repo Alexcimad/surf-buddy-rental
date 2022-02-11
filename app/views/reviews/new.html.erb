@@ -1,7 +1,8 @@
         <%= simple_form_for [@offer,@review] do |f| %>
           <div class="m-2">
-              <p><%= f.input :comment,label: :Comment, :input_html => {:style => 'width: 100%', :rows => 3 } %></p>
-              <p><%= f.input :rating, label: "Rating"%></p>
+              <%= f.input :title, label: :Title %>
+              <%= f.input :comment,label: :Comment, :input_html => {:style => 'width: 100%', :rows => 3 } %>
+              <%= f.input :rating, label: "Rating"%>
           </div>
           <div class="row">
               <div><%= link_to "Cancel", root_path, class: "btn btn-flat m-2" %></div>

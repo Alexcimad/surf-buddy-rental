@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :offers, through: :bookings
   has_one_attached :photo
+
+  validates :pseudo, presence: true
 end
