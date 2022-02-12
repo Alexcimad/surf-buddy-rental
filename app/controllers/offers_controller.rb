@@ -65,14 +65,14 @@ class OffersController < ApplicationController
   def update
     @offer = Offer.find(params[:id])
     @offer.update(offer_params)
-    redirect_to offers_path
+    redirect_to my_offers_path
   end
 
   # DELETE
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to offers_path
+    redirect_to my_offers_path
   end
 
   private
