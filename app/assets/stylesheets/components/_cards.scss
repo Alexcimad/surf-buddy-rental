@@ -4,6 +4,7 @@
   grid-gap: 16px;
 }
 
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -45,6 +46,11 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card-trip:hover {
+  transform: scale(1.04);
 }
 
 a:hover{
@@ -69,7 +75,7 @@ a:hover{
   font-size: 12px;
   opacity: .7;
   margin: 0;
-  color: $light_secondary
+  color: $light_secondary;
 }
 
 
@@ -197,6 +203,11 @@ a:hover{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.card-product:hover {
+  transform: scale(1.02);
 }
 
 .card-product img {
@@ -260,7 +271,6 @@ a:hover{
 .card-review .card-review-content{
 
 }
-  
 
 .card-review .review-comment{
   font-style: italic;
