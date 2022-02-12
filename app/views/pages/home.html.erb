@@ -7,9 +7,9 @@
     <%# <p class="text-center m-5"><%= link_to "Discover our surf boards 🏄‍♂️", offers_path, class:"btn btn-flat btn-cta m-5 p-4" %>
 </div>
 
-<%= render 'shared/search_bar' %>
+<div class="m-5"><%= render 'shared/search_bar' %></div>
 
-<div class="latest-offers ml-5 mr-5">
+<div class="latest-offers m-5">
   <h2 class="h2-light text-center m-5">The latest offers </h2>
   <div class="cards">
     <% @offers.each do |offer| %>
@@ -41,16 +41,16 @@
 
 <div class="container text-center mt-0">
   <h2 class="m-5 h2-light">Our Statistics</h2>
-  <div class="row ">
-    <div class="col stats-number">
+  <div class="details">
+    <div class="stats-number">
       <h3><strong><%= @booking %></strong></h3>
       <p>Number of Board Rental</p>
     </div>
-    <div class="col stats-number">
+    <div class="stats-number">
       <h3><strong><%= @offerstorate %></strong></h3>
       <p>Different boards to rate</p>
     </div>
-    <div class="col stats-number">
+    <div class="stats-number">
       <h3><strong><%= @users %></strong></h3>
       <p>Surfers</p>
     </div>
