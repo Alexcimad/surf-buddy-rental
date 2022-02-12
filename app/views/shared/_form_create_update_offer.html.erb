@@ -9,8 +9,8 @@
           <p><%= f.input :description,label: :Description, :input_html => {:style => 'width: 100%', :rows => 3 } %></p>
           <p><%= f.input :price_per_date, label: "Price per day (€)"%></p>
           <div class="d-flex justify-content-between">
-            <p class="date mr-2"><%= f.label "From :" %> <%= f.date_field :start_available_date %></p>
-            <p class="date ml-2"><%= f.label "To :" %> <%= f.date_field :end_available_date %></p>
+            <p class="mr-2"><%= f.label "From :" %> <%= f.date_field :start_available_date, class:"calendar-pick form-control" %></p>
+            <p class="ml-2"><%= f.label "To :" %> <%= f.date_field :end_available_date, class:"calendar-pick form-control" %></p>
           </div>
           <%= f.input :location %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>

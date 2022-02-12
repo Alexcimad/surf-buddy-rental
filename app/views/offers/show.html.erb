@@ -50,7 +50,7 @@
                 <p><%=@offer.description %></p>
               </div>
               <div id="lines-footer">
-                <p> <%=icon('fas','calendar-alt')%> From <%= @offer.start_available_date %> To <%= @offer.end_available_date %></p>
+                <p> <%=icon('fas','calendar-alt')%> From  <%= @offer.start_available_date.strftime("%b %d ,%Y") %>  To  <%= @offer.end_available_date.strftime("%b %d ,%Y") %></p>
                 <h2 id="card-offer-pricing"><%= @offer.price_per_date %>€ / day</h2>
               </div>
               <% if @offer.user == current_user %>
