@@ -6,9 +6,9 @@
 <div class="results m-3">
   <% result_text = ""%>
   <% if @offers.length == 0 %>
-    <h2 class="m-3">no results found</h2>
+    <h2 class="m-3">no board found</h2>
   <% elsif @offers.length == 1 %>
-    <h2 class="m-3"><%= @offers.length %> result found <%if params[:query].present? %>
+    <h2 class="m-3"><%= @offers.length %> board found <%if params[:query].present? %>
                                                           near <%= params[:query]%>
                                                         <%end%>
                                                         <%if params[:dates].present? %>
@@ -16,7 +16,7 @@
                                                         <%end%> </h2>
 
   <% else %>
-    <h2 class="m-3"><%= @offers.length %> results found<%if params[:query].present? %>
+    <h2 class="m-3"><%= @offers.length %> boards found<%if params[:query].present? %>
                                                           near <%= params[:query]%>
                                                         <%end%>
                                                         <%if params[:dates].present? %>

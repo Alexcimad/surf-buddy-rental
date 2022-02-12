@@ -128,7 +128,7 @@ puts "- #{offer_demo_Quiberon.title}"
 offers << offer_demo_Quiberon
 
 offer_demo_Carnac = Offer.create(title: " Minvielle 8'", location: "Carnac", state: "Average state", description: "I
-used a lot this board during my vacation in Brittany. It was perfect to begin surfing.", price_per_date: 20 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user3.id )
+used a lot this board during my vacation in Brittany. It was perfect to begin surfing.", price_per_date: 20 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user.id )
 file9 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
 offer_demo_Carnac.photos.attach(io: file9, filename: "offer-pic.jpg", content_type: "image/jpg")
 puts "- #{offer_demo_Carnac.title}"
@@ -136,6 +136,15 @@ puts "- #{offer_demo_Carnac.title}"
 offers << offer_demo_Carnac
 
 offers[0..5].each do |offer|
+  reviews = []
+  reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
+  reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:jeremyF.id, offer_id: offer.id )
+  reviewAron = Review.create!(title: "Good board to play in Britanny!", comment: "For funny spots in Carnac, it is really usefull", rating: (1..5).to_a.sample, user_id:user3.id, offer_id: offer.id )
+  reviews = [reviewKS, reviewJF, reviewAron]
+  offer.reviews = reviews
+end
+
+offers[7..9].each do |offer|
   reviews = []
   reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
   reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:jeremyF.id, offer_id: offer.id )
@@ -152,3 +161,6 @@ reviewAron = Review.create!(title: "Good board to play in Britanny!", comment: "
 reviews = [reviewKS, reviewJF, reviewAron]
 offers[6].reviews = reviews
 
+#Create booking for David
+booking1 = Booking.create!(total_price: 200, start_rental_date: Faker::Date.backward(days: 30),end_rental_date: Faker::Date.backward(days: 15),user_id: user2.id, offer_id: offer4.id)
+booking2 = Booking.create!(total_price: 240, start_rental_date: Faker::Date.backward(days: 50),end_rental_date: Faker::Date.backward(days: 22),user_id: user2.id, offer_id: offer3.id)
