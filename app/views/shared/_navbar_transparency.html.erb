@@ -12,9 +12,6 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active pr-3">
-            <%= link_to "Offers", offers_path, class: "nav-link nav-link-light" %>
-          </li>
-          <li class="nav-item active pr-3">
             <%= link_to "Add a board 🤙", new_offer_path, class: "btn btn-primary", id:"btn-create-offer" %>
           </li>
           <li class="nav-item dropdown">
