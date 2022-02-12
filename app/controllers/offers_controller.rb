@@ -16,20 +16,19 @@ class OffersController < ApplicationController
 
     if params[:dates].present?
       result_date = params[:dates]
-      start_date_string = result_date[-10..]
-      start_date = Date.parse(start_date_string) 
-      end_date_string = result_date[..10]
-      end_date = Date.parse(end_date_string) 
-      @offers = @offers.where("start_available_date <= ? AND end_available_date >= ?", start_date, end_date)
+      start_date_string = result_date[0..9]
+      @start_date = Date.parse(start_date_string) 
+      end_date_string = result_date[14..25]
+      @end_date = Date.parse(end_date_string) 
+      @offers = @offers.where("start_available_date <= ? AND end_available_date >= ?", @start_date, @end_date)
     end
     @markers = @offers.geocoded.map do |offer|
-      {
-        lat: offer.latitude,
-        lng: offer.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
-        image_url: helpers.asset_url("logo.png")
-
-      }
+    {
+      lat: offer.latitude,
+      lng: offer.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+      image_url: helpers.asset_url("logo.png")
+    }
     end
   
   end
