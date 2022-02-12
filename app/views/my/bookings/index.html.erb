@@ -9,7 +9,7 @@
           <h2><%= booking.offer.title %></h2>
           <p>State :<strong><%= booking.offer.state %></strong></p>
           <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
-          <p>Rented from : <%= booking.start_rental_date.strftime("%m %b %Y")%> - To : <%= booking.end_rental_date.strftime("%m %b %Y")%></p>
+          <p>Rented from : <%= booking.start_rental_date.strftime("%b %d ,%Y")%> - To : <%= booking.end_rental_date.strftime("%b %d ,%Y")%></p>
           <p>Total price : <strong><%= booking.total_price %>€</strong></p>
         </div>
         <%= link_to "How was your surfing? ✍️", new_offer_review_path(booking.offer), class: "btn btn-primary btn-custom-blue mt-2"%>

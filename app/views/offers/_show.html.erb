@@ -53,7 +53,7 @@
               <p><%=icon('fa','quote-left')%> <%=@offer.description.first(150)... %> <%=icon('fa','quote-right')%></p>
     </div>
     <div id="lines-footer">
-      <p> <%=icon('fa','calendar')%> From <%= @offer.start_available_date.strftime("%m %b %Y") %> To <%= @offer.end_available_date.strftime("%m %b %Y") %></p>
+      <p> <%=icon('fa','calendar')%> From  <%= @offer.start_available_date.strftime("%b %d ,%Y") %>  To  <%= @offer.end_available_date.strftime("%b %d ,%Y") %></p>
       <p id="card-offer-pricing"><%= @offer.price_per_date %> € / day</p>
     </div>
       <%= link_to "Check board details", new_offer_booking_path(@offer), class: "btn btn-flat btn-cta"%>

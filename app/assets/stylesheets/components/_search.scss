@@ -6,7 +6,16 @@
   .search-bar-container {
     display: flex;
     // margin: 0 auto;
-    padding: 0px 15px;
+    //padding: 0px 15px;
     justify-content: center;
-    
+    margin-top: 40px;
   }
+
+  .search-bar-container form{
+    margin: 0px ;
+  }
+
+  .btn-custom-blue-searchbar{
+    width: 600px;
+}
+
