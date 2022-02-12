@@ -12,6 +12,14 @@
     <p class="m-3"><%= @offers.length %> results found</p>
   <% end %>
 </div>
+
+<div class="results m-3">
+  <p> On a trouvé <%= pluralize @offers.size, "boards" %> 
+  <%=
+    %>
+  </p>
+</div>
+
 <div class="search row">
   <div class="search_left col-8">
       <div class="cards pb-5">
