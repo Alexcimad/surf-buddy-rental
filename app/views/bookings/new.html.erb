@@ -78,8 +78,8 @@
         <%=icon('fas','comment')%>  (<%=@offer.reviews.count%>)
       <%  end %>
     </p>
-        <%= f.label "from :" %> <%= f.date_field :start_rental_date %>
-        <%= f.label "to :" %> <%= f.date_field :end_rental_date %>
+        <%= f.label "from :" %> <%= f.date_field :start_rental_date, class:"calendar-pick form-control" %>
+        <%= f.label "to :" %> <%= f.date_field :end_rental_date, class:"calendar-pick form-control" %>
         <%= f.submit "Confirm booking and surf!",class:"btn btn-cta mt-3" %>
       <%end%>
     <%end%>
