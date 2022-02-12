@@ -24,8 +24,8 @@
           <td scope="col"><%= offer.state %></td>
           <td scope="col"><%= offer.location %></td>
           <td scope="col"><%= offer.price_per_date %>€</td>
-          <td scope="col"><%= offer.start_available_date.strftime("%m %b %Y") %></td>
-          <td scope="col"><%= offer.end_available_date.strftime("%m %b %Y") %></td>
+          <td scope="col"><%= offer.start_available_date.strftime("%b %d ,%Y") %></td>
+          <td scope="col"><%= offer.end_available_date.strftime("%b %d ,%Y") %></td>
           <th scope="col">Available</th>
           <td scope="col">
             <%= link_to offer_path(offer), class: "btn btn-primary btn-custom-blue" do %>
