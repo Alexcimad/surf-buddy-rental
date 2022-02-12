@@ -1,6 +1,7 @@
 // Dark Mode
 
 .footer {
+  color:white;
   width: 100%;
   display: flex;
   align-items: center;
@@ -24,9 +25,6 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
-}
 
 // Light Mode
 .footer_transparency{
@@ -42,4 +40,4 @@
 .footer_transparency .footer-copyright{
   color:white;
   opacity: 0.8;
-} 
+}

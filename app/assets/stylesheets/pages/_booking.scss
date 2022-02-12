@@ -4,4 +4,8 @@
 .details{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+.new_booking{
+  margin: 0 auto;
 }
