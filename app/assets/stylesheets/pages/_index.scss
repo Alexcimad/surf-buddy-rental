@@ -92,3 +92,13 @@
 .results > h2 {
   font-size : 32px;
 }
+a{
+  color: $medium_primary;
+}
+a:hover{
+  color: #d19664;
+}
+.breadcrumb-custom{
+  padding: 0px;
+  margin-bottom: 2em;
+}
