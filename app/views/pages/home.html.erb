@@ -13,7 +13,7 @@
   <h2 class="h2-light text-center m-5">The latest offers </h2>
   <div class="cards">
     <% @offers.each do |offer| %>
-      <%= link_to offer_path(offer) do %>
+      <%= link_to new_offer_booking_path(offer) do %>
         <div class="card-trip">
           <% if offer.photos.attached? %>
             <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
