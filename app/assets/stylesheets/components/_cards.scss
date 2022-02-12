@@ -55,6 +55,7 @@
 
 a:hover{
   color:$dark_secondary;
+  text-decoration: none;
 }
 
 
@@ -199,6 +200,7 @@ a:hover{
 .card-product {
   overflow: hidden;
   height: 150px;
+  width: 800px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
