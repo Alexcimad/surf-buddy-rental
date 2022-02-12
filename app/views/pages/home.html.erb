@@ -4,14 +4,14 @@
     <source src="https://storage.coverr.co/videos/hivOChMPoplz3YNyy00aEBonCQR02NWbKM?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjQ0NTIyOTMzfQ.-H1EaN3l5DnhXpsiHK2KFzqJij6Ui3YPcLKJBOp5BXA" type="video/mp4">
   </video>
     <h1 class="text-center h1-light">LET'S GO SURFING</h1>
-    <p class="text-center m-5"><%= link_to "Discover our surf boards 🏄‍♂️", offers_path, class:"btn btn-flat btn-cta m-5 p-4" %></p>
+    <%# <p class="text-center m-5"><%= link_to "Discover our surf boards 🏄‍♂️", offers_path, class:"btn btn-flat btn-cta m-5 p-4" %>
 </div>
 
 <%= render 'shared/search_bar' %>
 
-<div class="latest-offers m-5">
+<div class="latest-offers ml-5 mr-5">
   <h2 class="h2-light text-center m-5">The lastest offers </h2>
-    <div class="cards m-5">
+    <div class="cards ">
       <% @offers.each do |offer| %>
         <%= link_to offer_path(offer) do %>
           <div class="card-trip">
