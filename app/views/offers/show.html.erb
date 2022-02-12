@@ -55,7 +55,7 @@
               </div>
               <% if @offer.user == current_user %>
               <% else %>
-              <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-primary btn-custom-blue mt-2"%>
+              <%= link_to "Book this board", new_offer_booking_path(@offer), class: "btn btn-flat btn-cta mt-2"%>
               <% end %>
           </div>
         </div>
