@@ -33,7 +33,10 @@
   border: 1px solid red;
 }
 
-button.close{
-  box-sizing: border-box;
-  padding: 10px;
+.btn-cta{
+  background-color: $dark_secondary !important;
+}
+
+.btn-cta:hover{
+  background-color: #d19664 !important;
 }
