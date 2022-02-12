@@ -4,55 +4,55 @@
     <source src="https://storage.coverr.co/videos/hivOChMPoplz3YNyy00aEBonCQR02NWbKM?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjQ0NTIyOTMzfQ.-H1EaN3l5DnhXpsiHK2KFzqJij6Ui3YPcLKJBOp5BXA" type="video/mp4">
   </video>
     <h1 class="text-center h1-light">LET'S GO SURFING</h1>
-    <p class="text-center m-5"><%= link_to "Discover our surf boards 🏄‍♂️", offers_path, class:"btn btn-flat btn-cta m-5 p-4" %></p>
+    <%# <p class="text-center m-5"><%= link_to "Discover our surf boards 🏄‍♂️", offers_path, class:"btn btn-flat btn-cta m-5 p-4" %>
 </div>
 
 <%= render 'shared/search_bar' %>
 
-<div class="latest-offers m-5">
-  <h2 class="h2-light text-center m-5">The lastest offers </h2>
-    <div class="cards m-5">
-      <% @offers.each do |offer| %>
-        <%= link_to offer_path(offer) do %>
-          <div class="card-trip">
-            <% if offer.photos.attached? %>
-              <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
-            <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-            <% end %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= offer.title %></h2>
-                  <p><strong><%= offer.state %></strong></p>
-                  <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
-                </div>
-                  <h2 style="color: black" class="card-trip-pricing">💸 <%= offer.price_per_date %>€ / day</h2>
-                  <%if offer.user.photo.attached?%>
-                    <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
-                  <%else%>
-                    <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "avatar" %>
-                  <%end%>
+<div class="latest-offers ml-5 mr-5">
+  <h2 class="h2-light text-center m-5">The latest offers </h2>
+  <div class="cards">
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer) do %>
+        <div class="card-trip">
+          <% if offer.photos.attached? %>
+            <%= cl_image_tag(offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+          <% else %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= offer.title %></h2>
+                <p><strong><%= offer.state %></strong></p>
+                <p><%=icon('fas','map-marker-alt')%> <%=offer.location%></p>
               </div>
-          </div>
-        <% end %>
+                <h2 style="color: black" class="card-trip-pricing">💸 <%= offer.price_per_date %>€ / day</h2>
+                <%if offer.user.photo.attached?%>
+                  <%= cl_image_tag(offer.user.photo.key, crop: :fill, :gravity => :face, class: "card-trip-user avatar-bordered")%>
+                <%else%>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2017/05/22/19/49/surfer-2335087_960_720.jpg", class: "avatar" %>
+                <%end%>
+            </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center mt-0">
   <h2 class="m-5 h2-light">Our Statistics</h2>
-  <div class="row mt-5 mb-5">
+  <div class="row ">
     <div class="col stats-number">
       <h3><strong><%= @booking %></strong></h3>
       <p>Number of Board Rental</p>
     </div>
     <div class="col stats-number">
       <h3><strong><%= @offerstorate %></strong></h3>
-      <p>Different board to rate</p>
+      <p>Different boards to rate</p>
     </div>
     <div class="col stats-number">
       <h3><strong><%= @users %></strong></h3>
-      <p>Surfer</p>
+      <p>Surfers</p>
     </div>
   </div>
 </div>

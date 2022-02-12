@@ -3,15 +3,28 @@
   <%= render 'shared/search_bar' %>
 </div>
 
-<div class="results">
+<div class="results m-3">
+  <% result_text = ""%>
   <% if @offers.length == 0 %>
-    <p class="m-3">no results found</p>
+    <h2 class="m-3">no results found</h2>
   <% elsif @offers.length == 1 %>
-    <p class="m-3"><%= @offers.length %> result found</p>
+    <h2 class="m-3"><%= @offers.length %> result found <%if params[:query].present? %>
+                                                          near <%= params[:query]%>
+                                                        <%end%>
+                                                        <%if params[:dates].present? %>
+                                                          from <%= @start_date.strftime("%m %b %Y")%> to <%= @end_date.strftime("%m %b %Y") %>
+                                                        <%end%> </h2>
+
   <% else %>
-    <p class="m-3"><%= @offers.length %> results found</p>
+    <h2 class="m-3"><%= @offers.length %> results found<%if params[:query].present? %>
+                                                          near <%= params[:query]%>
+                                                        <%end%>
+                                                        <%if params[:dates].present? %>
+                                                          from <%= @start_date.strftime("%m %b %Y")%> to <%= @end_date.strftime("%m %b %Y") %>
+                                                        <%end%> </h2>
   <% end %>
 </div>
+
 <div class="search row">
   <div class="search_left col-8">
       <div class="cards pb-5">
