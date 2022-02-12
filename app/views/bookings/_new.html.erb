@@ -1,13 +1,17 @@
     <div class="modal-body custom-modal">
-      <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
       <div class="cards-review">
+      <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <% if @offer.reviews.empty? %>
+      <p>They are no comment for this board</p>
+      <% else %>
         <% @offer.reviews.each do |review| %>
           <div class="card-review">
             <div class="card-review-header">
               <%= cl_image_tag(review.user.photo.key, crop: :fill, :gravity => :face, class: "avatar-bordered")%>
-              <div>
+              <div class="ml-3">
                 <h1><%=review.user.pseudo%></h1>
                 <p><%= review.updated_at.strftime("%d %b %Y") %></p>
               </div>
@@ -19,5 +23,6 @@
             </div>
             </div>
         <%end%>
+      <% end %>
       </div>
     </div>

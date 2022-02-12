@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "booking";
 
 .search-form-control {
   position: relative;
@@ -89,4 +90,8 @@ input{
 }
 .card_custom{
   min-height: 300px;
+}
+
+.results > h2 {
+  font-size : 32px;
 }
