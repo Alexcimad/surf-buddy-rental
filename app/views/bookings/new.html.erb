@@ -71,6 +71,7 @@
 
 
     <% if @offer.user != current_user %>
+
       <div class="booking-form search_right col d-flex align-items-center">
         <%= simple_form_for [@offer,@booking] do |f| %>
           <h2 class="text-center">Book this board</h2>
@@ -79,8 +80,8 @@
               <%=icon('fas','comment')%>  (<%=@offer.reviews.count%>)
             <% end %>
           </p>
-            <%= f.label "from :" %> <%= f.date_field :start_rental_date %>
-            <%= f.label "to :" %> <%= f.date_field :end_rental_date %>
+            <%= f.label "from :" %> <%= f.date_field :start_rental_date, class:"calendar-pick form-control" %>
+            <%= f.label "to :" %> <%= f.date_field :end_rental_date, class:"calendar-pick form-control" %>
             <%= f.submit "Confirm booking and surf!",class:"btn btn-flat btn-cta mt-3" %>
         <% end %>
       </div>
