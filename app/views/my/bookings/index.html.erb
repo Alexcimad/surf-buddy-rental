@@ -1,4 +1,11 @@
 <div class="container">
+    <nav aria-label="breadcrumb breadcrumb-custom">
+      <ol class="breadcrumb breadcrumb-custom">
+        <li class="breadcrumb-item"><%= link_to "Home", root_path %></li>
+        <li class="breadcrumb-item"><%= link_to "All boards", offers_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">My bookings</li>
+      </ol>
+    </nav>
   <h1 class="mt-3 mb-3">My bookings</h1>
     <br>
 
@@ -47,7 +54,7 @@
           </div>
           <%= link_to "⭐️", new_offer_review_path(booking.offer), class: "button9"%>
         </div>
-      <% end %>      
+      <% end %>
 
   <% else %>
     <p>You don't have bookings yet</p>
