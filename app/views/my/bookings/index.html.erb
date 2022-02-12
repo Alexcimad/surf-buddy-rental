@@ -1,20 +1,53 @@
 <div class="container">
   <h1 class="mt-3 mb-3">My bookings</h1>
+    <br>
 
   <% if @bookings.exists? %>
-    <% @bookings.each do |booking| %>
-      <div class="card-product mb-3">
-        <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
-        <div class="card-product-infos">
-          <h2><%= booking.offer.title %></h2>
-          <p>State :<strong><%= booking.offer.state %></strong></p>
-          <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
-          <p>Rented from : <%= booking.start_rental_date.strftime("%b %d ,%Y")%> - To : <%= booking.end_rental_date.strftime("%b %d ,%Y")%></p>
-          <p>Total price : <strong><%= booking.total_price %>€</strong></p>
+
+      <%# --------- DATE COMPARAISON ------------ %>
+      <% @booking_in = [] %>
+      <% @booking_out = [] %>
+      <% @bookings.each do |booking| %>
+        <% if booking.end_rental_date >= Date.today %>
+          <% @booking_in << booking %>
+        <% else %>
+          <% @booking_out << booking %>
+        <% end %>
+      <% end %>
+
+      <%# --------- BOOKING IN ------------ %>
+      <h3 class="mt-3 mb-3">On going</h3>
+      <% @booking_in.each do |booking| %>
+        <div class="card-product mb-3">
+          <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+          <div class="card-product-infos">
+            <h2><%= booking.offer.title %></h2>
+            <p>State :<strong><%= booking.offer.state %></strong></p>
+            <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
+            <p>Rented from : <%= booking.start_rental_date.strftime("%b %d ,%Y")%> - To : <%= booking.end_rental_date.strftime("%b %d ,%Y")%></p>
+            <p>Total price : <strong><%= booking.total_price %>€</strong></p>
+          </div>
         </div>
-        <%= link_to "How was your surfing? ✍️", new_offer_review_path(booking.offer), class: "btn btn-primary btn-custom-blue mt-2"%>
-      </div>
-    <% end %>
+      <% end %>
+      <br>
+      <br>
+
+      <%# --------- BOOKING OUT ------------ %>
+      <h3 class="mt-3 mb-3">Past bookings</h3>
+      <% @booking_out.each do |booking| %>
+        <div class="card-product mb-3">
+          <%= cl_image_tag(booking.offer.photos.first.key, height: 300, width: 400, crop: :fill) %>
+          <div class="card-product-infos">
+            <h2><%= booking.offer.title %></h2>
+            <p>State :<strong><%= booking.offer.state %></strong></p>
+            <p><%=icon('fas','map-marker-alt')%><%= booking.offer.location %></p>
+            <p>Rented from : <%= booking.start_rental_date.strftime("%b %d ,%Y")%> - To : <%= booking.end_rental_date.strftime("%b %d ,%Y")%></p>
+            <p>Total price : <strong><%= booking.total_price %>€</strong></p>
+          </div>
+          <%= link_to "How was your surfing? ✍️", new_offer_review_path(booking.offer), class: "btn btn-primary btn-custom-blue mt-2"%>
+        </div>
+      <% end %>      
+
   <% else %>
     <p>You don't have bookings yet</p>
   <% end %>
