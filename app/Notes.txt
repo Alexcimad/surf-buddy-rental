@@ -1,0 +1,17 @@
+HOME
+    - Garder le style du "offers" et "login" pour les autres views
+    _ border au bouton
+    - border searchbar
+
+INDEX
+    - Trop d'espaces autour de la barre de recherche
+    - container un peu large ?
+
+SHOW
+
+NEW 
+    - un peu fad
+
+REVIEWS
+
+BOARDS
