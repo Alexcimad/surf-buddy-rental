@@ -29,12 +29,13 @@ user.photo.attach(io: file_user, filename: "alexis_photo.jpg", content_type: "im
 
 puts "----CREATING THEO USER"
 user1 = User.create!(email: 'theogalais@gmail.com',password: "theogalais@gmail.com", password_confirmation: "theogalais@gmail.com", pseudo: "Theo")
-file_user2 = URI.open("theo.jpg")
-user1.photo.attach(io: file_user2, filename: "theo_photo.jpg", content_type: "image/jpg")
+file_user1 = URI.open("theo.jpg")
+user1.photo.attach(io: file_user1, filename: "theo_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING DAVID USER"
 user2 = User.create!(email: 'davidsantos@live.fr',password: "davidsantos@live.fr", password_confirmation: "davidsantos@live.fr", pseudo: "David")
-
+file_user2 = URI.open("david.jpg")
+user2.photo.attach(io: file_user2, filename: "david_photo.jpg", content_type: "image/jpg")
 
 puts "----CREATING ARON USER"
 user3 = User.create!(email: 'aron@gmail.com',password: "aron@gmail.com", password_confirmation: "aron@gmail.com", pseudo: "Aron")
@@ -99,14 +100,42 @@ puts "- #{offer6.title}"
 
 offers << offer6
 
-offer7 = Offer.create(title: " Quicksilver 7'9", location: "Vannes", state: CONST_STATE.sample, description: description , price_per_date: (1..100).to_a.sample , start_available_date: Faker::Date.in_date_period, end_available_date: Faker::Date.in_date_period, user_id: user1.id )
+offer_demo_vannes = Offer.create(title: " Quicksilver 7'9", location: "Vannes", state: "Average state", description: "I used this board a lot during my studies but now I
+want to get rid of it to pass it to someone who wants to learn surfing" , price_per_date: 70 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user1.id )
 file7 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
-offer7.photos.attach(io: file7, filename: "offer-pic.jpg", content_type: "image/jpg")
-puts "- #{offer7.title}"
+file_add_photo = URI.open("https://cdn.pixabay.com/photo/2017/08/07/02/52/people-2599016_960_720.jpg")
+offer_demo_vannes.photos.attach(io: file_add_photo, filename: "offer-pic.jpg", content_type: "image/jpg")
+offer_demo_vannes.photos.attach(io: file7, filename: "offer-pic.jpg", content_type: "image/jpg")
 
-offers << offer7
+puts "- #{offer_demo_vannes.title}"
 
-offers.each do |offer|
+offers << offer_demo_vannes
+
+offer_demo_auray = Offer.create(title: " Slater Design 7'9", location: "Auray", state: "Good state", description: "I used this board a lot during my vacation and competition but it 
+is still in a very good state. You can use it both for competition or fun", price_per_date: 30 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user3.id )
+file8 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
+offer_demo_auray.photos.attach(io: file8, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer_demo_auray.title}"
+
+offers << offer_demo_auray
+
+offer_demo_Quiberon = Offer.create(title: " Bic 6'3 ", location: "Quiberon", state: "Good state", description: "I
+used a lot this board during my vacation in Brittany. It was perfect to begin surfing.", price_per_date: 20 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user3.id )
+file9 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
+offer_demo_Quiberon.photos.attach(io: file9, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer_demo_Quiberon.title}"
+
+offers << offer_demo_Quiberon
+
+offer_demo_Carnac = Offer.create(title: " Minvielle 8'", location: "Carnac", state: "Average state", description: "I
+used a lot this board during my vacation in Brittany. It was perfect to begin surfing.", price_per_date: 20 , start_available_date: Date.today, end_available_date: Faker::Date.between(from: '2022-08-30', to: '2022-09-30'), user_id: user.id )
+file9 = URI.open("https://cdn.pixabay.com/photo/2016/08/16/23/22/beach-1599234_960_720.jpg")
+offer_demo_Carnac.photos.attach(io: file9, filename: "offer-pic.jpg", content_type: "image/jpg")
+puts "- #{offer_demo_Carnac.title}"
+
+offers << offer_demo_Carnac
+
+offers[0..5].each do |offer|
   reviews = []
   reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
   reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:jeremyF.id, offer_id: offer.id )
@@ -114,3 +143,24 @@ offers.each do |offer|
   reviews = [reviewKS, reviewJF, reviewAron]
   offer.reviews = reviews
 end
+
+offers[7..9].each do |offer|
+  reviews = []
+  reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: (1..5).to_a.sample, user_id:kellyS.id, offer_id: offer.id )
+  reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: (1..5).to_a.sample, user_id:jeremyF.id, offer_id: offer.id )
+  reviewAron = Review.create!(title: "Good board to play in Britanny!", comment: "For funny spots in Carnac, it is really usefull", rating: (1..5).to_a.sample, user_id:user3.id, offer_id: offer.id )
+  reviews = [reviewKS, reviewJF, reviewAron]
+  offer.reviews = reviews
+end
+
+
+reviews = []
+reviewKS = Review.create!(title: "Best board I've Ever had!", comment: "This is the best surfboard to use on pipeline spot", rating: 4, user_id:kellyS.id, offer_id: offer.id )
+reviewJF = Review.create!(title: "I love this board for Hossegor!",comment: "I loved to use this board in the cul nu beach of Hossegor. I higly recommend it",rating: 5, user_id:jeremyF.id, offer_id: offer.id )
+reviewAron = Review.create!(title: "Good board to play in Britanny!", comment: "For funny spots in Carnac, it is really usefull", rating: 4, user_id:user3.id, offer_id: offer.id )
+reviews = [reviewKS, reviewJF, reviewAron]
+offers[6].reviews = reviews
+
+#Create booking for David
+booking1 = Booking.create!(total_price: 200, start_rental_date: Faker::Date.backward(days: 30),end_rental_date: Faker::Date.backward(days: 15),user_id: user2.id, offer_id: offer4.id)
+booking2 = Booking.create!(total_price: 240, start_rental_date: Faker::Date.backward(days: 50),end_rental_date: Faker::Date.backward(days: 22),user_id: user2.id, offer_id: offer3.id)
